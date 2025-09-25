@@ -7,7 +7,7 @@ import {
 } from "@clerk/clerk-react";
 import "./index.css";
 import LandingPage from "./pages/landingPage";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/DashBoard";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 export default function App() {
