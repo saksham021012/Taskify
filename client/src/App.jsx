@@ -6,7 +6,7 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import "./index.css";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/landingPage";
 import Dashboard from "./pages/Dashboard";
 import { Routes, Route, Navigate } from "react-router-dom";
 
