@@ -12,7 +12,7 @@ const app = express();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://taskify-jade-one.vercel.app"
+    "https://taskify-flame-chi.vercel.app"
 ]
 
 app.use(cors({
