@@ -3,7 +3,7 @@ const express = require("express");
 const database = require('./config/database')
 const cors = require('cors');
 const PORT = process.env.PORT || 4000;
-const { clerkMiddleware, requireAuth } = require('@clerk/express');
+const { clerkMiddleware } = require('@clerk/express');
 
 
 
@@ -32,7 +32,7 @@ const task = require("./routes/Task");
 
 
 //use routes
-app.use('/api/tasks',requireAuth(), task);
+app.use('/api/tasks', task);
 
 //default route
 app.get("/", (req, res) => {
