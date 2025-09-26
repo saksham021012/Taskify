@@ -1,0 +1,23 @@
+{
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saksham021012/Taskify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saksham021012/Taskify/issues"
+  },
+  "homepage": "https://github.com/saksham021012/Taskify#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
