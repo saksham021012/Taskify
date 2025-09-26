@@ -1,6 +1,6 @@
-# Task Manager App
+# Taskify
 
-A full-stack task management application built with **React**, **Express**, and **Clerk authentication**. Users can create, update, delete, and complete tasks with a responsive and modern UI. Supports light/dark mode and inline editing of tasks.
+A full-stack task management application built with **React**, **Express**, and **Clerk authentication**. Users can create, update, delete, and complete tasks with a responsive and modern UI. 
 
 ---
 
