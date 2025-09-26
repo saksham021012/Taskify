@@ -32,7 +32,7 @@ export const getAllTasks = async () => {
     const response = await apiConnector("GET", GET_ALL_TASKS_API);
     console.log("GET_ALL_TASKS RESPONSE:", response);
 
-    if (!response.data.success || !Array.isArray(response.data.data)) {
+    if (!response.data.success) {
       throw new Error("Failed to load tasks");
     }
 
