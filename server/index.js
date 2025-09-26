@@ -32,7 +32,7 @@ const task = require("./routes/Task");
 
 
 //use routes
-app.use('/api/tasks', task);
+app.use('/api/tasks',requireAuth(), task);
 
 //default route
 app.get("/", (req, res) => {
