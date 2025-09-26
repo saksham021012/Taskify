@@ -1,6 +1,6 @@
 # Taskify
 
-A full-stack task management application built with **React**, **Express**, and **Clerk authentication**. Users can create, update, delete, and complete tasks with a responsive and modern UI. 
+A full-stack task management application built with **React**, **Express**, **MongoDB**, **Node.js** and **Clerk authentication**. Users can create, update, delete, and complete tasks with a responsive and modern UI. 
 
 ---
 
