@@ -53,7 +53,7 @@ task-manager/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/task-manager.git
+git clone [https://github.com/<your-username>/task-manager.git](https://github.com/saksham021012/Taskify.git)
 cd task-manager
 ```
 
