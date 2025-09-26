@@ -14,6 +14,26 @@ A full-stack task management application built with **React**, **Express**, and 
 
 ---
 
+## User Interface
+
+### Home
+
+<img src="https://github.com/user-attachments/assets/6c790f3d-2da6-4740-9bf0-1f98b25dbcbe" alt="Dashboard" width="800" />
+
+---
+
+### Dashboard
+
+<img src="https://github.com/user-attachments/assets/66e5afa7-14a7-4075-b008-5a724ef097e6" alt="Task List" width="800" />
+
+---
+
+### Completed Task
+
+<img src="https://github.com/user-attachments/assets/ce11dcb9-d982-4985-8988-22994bcc6215" alt="Edit Task" width="800" />
+
+
+
 ## Tech Stack
 
 - **Frontend:** React, Tailwind CSS, Lucide Icons
