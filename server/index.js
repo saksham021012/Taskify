@@ -25,13 +25,19 @@ database.connect();
 app.use(express.json());
 app.use(clerkMiddleware());
 
+const checkAuth = (req, res, next) => {
+    if (!req.auth || !req.auth.userId) {
+        return res.status(401).json({ success: false, message: "Unauthorized" });
+    }
+    next();
+};
 //import routes
 
 const task = require("./routes/Task");
 
 
 //use routes
-app.use('/api/tasks',requireAuth(), task);
+app.use('/api/tasks',checkAuth, task);
 
 //default route
 app.get("/", (req, res) => {
