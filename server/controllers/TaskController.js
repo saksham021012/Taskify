@@ -1,5 +1,4 @@
 const Task = require("../models/Task");
-
 // Create a new task
 exports.createTask = async (req, res) => {
   try {
@@ -28,10 +27,11 @@ exports.createTask = async (req, res) => {
   }
 };
 
-// Get all tasks for the logged-in user
+
 exports.getTasks = async (req, res) => {
   try {
     const userId = req.auth.userId;
+    console.log("USERID: ", userId)
 
     const tasks = await Task.find({ userId }).sort({ createdAt: -1 });
 
