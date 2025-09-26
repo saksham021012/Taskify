@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Loader } from 'lucide-react';
+import { Loader, Menu } from 'lucide-react';
 import NavBar from "../components/NavBar";
 import Sidebar from "../components/SideBar";
 import TaskList from "../components/TaskList";
@@ -15,6 +15,7 @@ const TaskifyDashboard = () => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState('all'); // 'all' or 'completed'
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Load tasks on component mount
   useEffect(() => {
@@ -116,25 +117,40 @@ const TaskifyDashboard = () => {
           setActiveView={setActiveView}
           totalCount={totalCount}
           completedCount={completedCount}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
         
         <div className="flex-1 flex flex-col min-w-0">
-          <main className="flex-1 p-8">
+          {/* mobile Menu Button */}
+          <div className="lg:hidden p-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
+
+          <main className="flex-1 p-4 sm:p-6 lg:p-8">
             <div className="max-w-4xl mx-auto h-full">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-50">
                   {activeView === 'completed' ? 'Completed Tasks' : 'All Tasks'}
                 </h2>
                 {loading && (
-                  <Loader className="animate-spin text-violet-500" size={24} />
+                  <div className="flex items-center gap-2 text-violet-500">
+                    <Loader className="animate-spin" size={20} />
+                    <span className="text-sm sm:hidden">Loading...</span>
+                  </div>
                 )}
               </div>
               
-              <div className="flex flex-col gap-6 pb-8">
+              <div className="flex flex-col gap-4 sm:gap-6 pb-6 sm:pb-8">
                 {loading ? (
-                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8 text-center">
-                    <Loader className="animate-spin mx-auto mb-4 text-violet-500" size={32} />
-                    <p className="text-gray-500 dark:text-gray-400">Loading tasks...</p>
+                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 sm:p-8 text-center">
+                    <Loader className="animate-spin mx-auto mb-4 text-violet-500" size={24} sm:size={32} />
+                    <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base">Loading tasks...</p>
                   </div>
                 ) : (
                   <TaskList
@@ -146,7 +162,7 @@ const TaskifyDashboard = () => {
                   />
                 )}
                 
-                {/* Add new task form - only show in 'all' view */}
+                {/* add new task form - only show in all */}
                 {activeView === 'all' && !loading && (
                   <TaskForm onAddTask={handleAddTask} />
                 )}
